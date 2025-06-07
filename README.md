@@ -8,6 +8,8 @@ This MCP abstracts the complexity of omnichain token creation and cross-chain in
 The MCP uses Solidity's CREATE2 opcode to deploy OFT contracts at the same address on every chain.
 The address is derived from the bytecode and a fixed salt, which includes currently the <i>**token name and symbol**</i>. Make sure you use unique identifiers when deploying, because you cannot create two times the same token (same name and symbol) using the same factory.
 
+It’s a working starting point. You can bring your own OFT contract and expand it with custom features or token logic. The system is open and extendable by design.  
+
 ## Features & Tools
 
 This MCP server exposes the following tools for interaction:
