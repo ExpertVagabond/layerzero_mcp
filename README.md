@@ -1,6 +1,6 @@
 # LayerZero OFT MCP Server
 
-LayerZero OFT MCP is a TypeScript/Node.js Model Context Protocol (MCP) server for creating, deploying, and bridging [Omnichain Fungible Tokens (OFTs)](https://docs.layerzero.network/v2/concepts/applications/oft-standard#omnichain-tokens) across multiple blockchains. Interactions are primarily managed via `ethers.js`, utilizing LayerZero contract ABIs and network configurations, leveraging LayerZero contracts and protocols for cross-chain communication.
+LayerZero OFT MCP is a TypeScript/Node.js Model Context Protocol (MCP) server for creating, deploying, and bridging [Omnichain Fungible Tokens (OFTs)](https://docs.layerzero.network/v2/concepts/applications/oft-standard#omnichain-tokens) across multiple blockchains. Interactions are primarily managed via `ethers.js`, leveraging LayerZero contracts and protocols for cross-chain communication.
 
 This MCP abstracts the complexity of omnichain token creation and cross-chain interactions by providing a structured, context-aware layer for initiating, managing, and bridging OFTs. It is designed for easy integration with LLM agents, bots, or applications that require secure and reliable access to decentralized cross-chain functionality.
 
