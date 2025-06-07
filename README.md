@@ -4,6 +4,10 @@ LayerZero OFT MCP is a TypeScript/Node.js Model Context Protocol (MCP) server fo
 
 This MCP abstracts the complexity of omnichain token creation and cross-chain interactions by providing a structured, context-aware layer for initiating, managing, and bridging OFTs. It is designed for easy integration with LLM agents, bots, or applications that require secure and reliable access to decentralized cross-chain functionality.
 
+**Deterministic Cross-Chain Contract Addressing**  
+The MCP uses Solidity's CREATE2 opcode to deploy OFT contracts at the same address on every chain.
+The address is derived from the bytecode and a fixed salt, which includes currently the <i>**token name and symbol**</i>. Make sure you use unique identifiers when deploying, because you cannot create two times the same token (same name and symbol) using the same factory.
+
 ## Features & Tools
 
 This MCP server exposes the following tools for interaction:
@@ -80,8 +84,8 @@ Failure to do so will result in errors when attempting to use the `deploy-and-co
     OWNER_ADDRESS="your_owner_ethereum_address_here"
     ARBITRUM_SEPOLIA_RPC_URL="your_Arbitrum sepolia_testnet_rpc_url_here"
     BASE_SEPOLIA_RPC_URL="your_base_sepolia_testnet_rpc_url_here"
-    "ARBITRUM_FACTORY_ADDRESS"= "0x754a2643Ce68e0e34510B1E246254f93946AE3a1",
-    "BASE_FACTORY_ADDRESS"= "0x754a2643Ce68e0e34510B1E246254f93946AE3a1"
+    ARBITRUM_FACTORY_ADDRESS="0x754a2643Ce68e0e34510B1E246254f93946AE3a1"
+    BASE_FACTORY_ADDRESS="0x754a2643Ce68e0e34510B1E246254f93946AE3a1"
 
     # Add other RPC URL env variables if you configure more networks in utils.ts
     ```
@@ -133,7 +137,7 @@ Once configured (including ABI/Bytecode and environment variables), the MCP serv
 You can then interact with it using natural language prompts if using an LLM. For example:
 
 **To deploy and configure a new OFT:**
-"Deploy a new OFT named 'OmniCoin' (OMC) with a total supply of 500,000 tokens across both Arbitrum sepoliaand Base Sepolia testnets."
+"Deploy a new OFT named 'OmniCoin' (OMC) with a total supply of 500,000 tokens across both Arbitrum sepolia and Base Sepolia testnets."
 
 This will use the `deploy-and-configure-oft-multichain` tool.
 
